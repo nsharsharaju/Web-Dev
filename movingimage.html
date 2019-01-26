@@ -1,0 +1,80 @@
+<html>
+<head>
+<script>
+
+var timer;
+var x_position = 0;
+var y_position = 0;
+var the_image;
+
+
+function moveleft()
+{
+the_image = document.getElementById("harsha");
+x_position = x_position+1;
+the_image.style.left = x_position;
+}
+
+function moveright()
+{
+  the_image = document.getElementById("harsha");
+  x_position = x_position-1;
+  the_image.style.left = x_position;
+}
+
+function moveup()
+{
+  the_image = document.getElementById("harsha");
+  y_position = y_position-1;
+  the_image.style.top = y_position;
+}
+
+function movedown()
+{
+  the_image = document.getElementById("harsha");
+  y_position = y_position+1;
+  the_image.style.top = y_position;
+}
+
+function changeleft()
+{
+   clearInterval(timer);
+   timer = setInterval(moveleft,5);
+}
+
+function changeright()
+{
+
+ clearInterval(timer);
+  timer = setInterval(moveright,5);
+}
+
+function changeup()
+{
+  clearInterval(timer);
+  timer = setInterval(moveup,5)
+}
+
+function changedown()
+{
+  clearInterval(timer);
+  timer = setInterval(movedown,5);
+}
+
+
+</script>
+}
+
+</head>
+<body onload="timer = setInterval(moveleft,5)">
+
+<img src="http://www.teluguadda.co.in/wp-content/uploads/2016/09/kcr-nd-cbn.jpg" id="harsha"
+ style="position:absolute; left:0">
+
+ <button onclick="changeleft()">Click here to move to right</button>
+ <button onclick="changeright()">Click here to move to left</button>
+ <button onclick="changeup()">Click here to move to up</button>
+ <button onclick="changedown()">Click here to move to down</button>
+ <button onclick="clearInterval(timer)">Stop!</button>
+</body>
+</html>
